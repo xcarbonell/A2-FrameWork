@@ -1,16 +1,24 @@
 <?php
 
-    namespace App\Controllers;
+namespace App\Controllers;
 
-    
-    use App\Registry;
 
-class IndexController {
+use App\Registry;
+use App\Controller;
+use App\Database\Connection;
+use App\Request;
+use App\Session;
 
-        public function index()
-        {
-            $users = Registry::get('database')->selectAll('users');
-            
-            return view('index', compact('users'));
-        }
+class IndexController extends Controller
+{
+
+    public function __construct(Request $request, Session $session)
+    {
+        parent::__construct($request, $session);
     }
+
+    public function index()
+    {
+        return view('index', ['nom' => 'Home']);
+    }
+}

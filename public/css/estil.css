@@ -1,0 +1,99 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    background-color: #393E46;
+    color: white;
+}
+
+p, label, td{
+    font-size: 0.75em;
+}
+
+header{
+    display: flex;  
+    justify-content: space-between;
+    align-items: center;  
+}
+
+nav{
+    display: flex;
+    padding: 10px;
+    background-color: #00ADB5;
+    border: solid 2px rgba(0, 38, 255);
+    margin: 5px;
+}
+
+form, label, h4, h3{   
+    background-color: #00ADB5;
+}
+
+li{
+    display: inline;
+    background-color: #00ADB5;
+}
+
+input{
+    background-color: white;
+    color: black;
+}
+
+section{
+    display: flex;
+}
+
+article{
+    flex: 1;
+    padding: 10px;
+    background-color: #00ADB5;
+    border: solid 2px rgba(0, 38, 255);
+    margin: 5px;
+}
+
+.gestorTasks{
+    display: flex;
+    flex-direction: column;
+}
+
+table{
+    width: 100%;
+}
+
+table, tr, td, th{
+    border: solid 1px black;
+    background-color: #00ADB5;
+}
+
+#tasks h4{
+    background-color: #00ADB5;    
+}
+
+#perfil h4, p{
+    background-color: #00ADB5;
+    width: 100%;
+}
+
+a{
+    background-color: #F0A500;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 0.75em;
+}
+
+a:hover{
+    background-color: #f0a400c2;
+}
+
+button{
+    background-color: gray;
+    padding: 2px;
+}
+
+.crudTasks{
+    width: 100px;
+}
+
+select{
+    margin-top: 3px;
+    margin-bottom: 3px;
+}

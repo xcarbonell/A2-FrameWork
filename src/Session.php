@@ -1,24 +1,24 @@
 <?php
 
-    namespace App;
+namespace App;
 
 use LogicException;
 
-final class Session{
-        private $id;
+final class Session
+{
+    private $id;
 
-        function __construct()
-        {
-            $status=session_status();
-            if($status==PHP_SESSION_DISABLED){
-                throw new LogicException("Sessions disabled");
-            }
-            if($status==PHP_SESSION_NONE){
-                session_start();
-                $this->id=session_id();
-            }
-            
+    function __construct()
+    {
+        $status = session_status();
+        if ($status == PHP_SESSION_DISABLED) {
+            throw new LogicException("Sessions disabled");
         }
+        if ($status == PHP_SESSION_NONE) {
+            session_start();
+            $this->id = session_id();
+        }
+    }
 
     /**
      * Gets a session value associated with the specified key.
@@ -27,8 +27,9 @@ final class Session{
      *
      * @return mixed|null Returns the value on success. NULL if the key doesn't exist.
      */
-    public function get($key) {
-        if(array_key_exists($key, $_SESSION)) {
+    public function get($key)
+    {
+        if (array_key_exists($key, $_SESSION)) {
             return $_SESSION[$key];
         }
         return null;
@@ -40,11 +41,13 @@ final class Session{
      * @param string $key
      * @param mixed  $value
      */
-    public function set($key, $value) {
+    public static function set($key, $value)
+    {
         $_SESSION[$key] = $value;
     }
-    public function unset($key){
-        if ($this->exists($key)){
+    public function unset($key)
+    {
+        if ($this->exists($key)) {
             unset($_SESSION[$key]);
         }
     }
@@ -56,8 +59,9 @@ final class Session{
      *
      * @return bool
      */
-    public function delete($key) {
-        if(array_key_exists($key, $_SESSION)) {
+    public function delete($key)
+    {
+        if (array_key_exists($key, $_SESSION)) {
             unset($_SESSION[$key]);
             return true;
         }
@@ -71,13 +75,13 @@ final class Session{
      *
      * @return bool
      */
-    public function exists($key) {
+    public function exists($key)
+    {
         return array_key_exists($key, $_SESSION);
     }
 
-    public function destroy(){
+    public function destroy()
+    {
         session_destroy();
     }
-
-
 }
