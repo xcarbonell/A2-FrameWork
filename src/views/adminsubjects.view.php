@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School</title>
-    <link type="text/css" rel="stylesheet" href="public/css/estil.css" />
+    <link type="text/css" rel="stylesheet" href="<?php root(); ?>public/css/estil.css" />
 </head>
 
 <body>
@@ -15,7 +15,7 @@
             <h1><?= $nom; ?></h1>
         </div>
         <div id="menuSup">
-            <form action="\logout" method="post">
+            <form action="<?= root(); ?>logout" method="post">
                 <button type="submit">TANCAR SESSIO</button>
             </form>
         </div>
@@ -43,7 +43,7 @@
         <article>
             <h4>Afegir nova assignatura</h4>
             <br>
-            <form action="\adminsubjects\addSubject" method="post">
+            <form action="<?= root(); ?>adminsubjects/addSubject" method="post">
                 <input type="text" name="addSubjectName" placeholder="Nom">
                 <br>
                 <select name="addSubjectTeacher">
@@ -71,7 +71,7 @@
         <article>
             <h4>Modificar dades d'una assignatura existent</h4>
             <br>
-            <form action="\adminsubjects\updateSubject" method="post">
+            <form action="<?= root(); ?>adminsubjects/updateSubject" method="post">
                 <select name="updateSubjectId">
                     <option disabled selected>SELECCIONA ASSIGNATURA</option>
                     <?php
@@ -88,7 +88,8 @@
                     }
                     ?>
                 </select>
-                <br><select name="updateSubjectCourse">
+                <br>
+                <select name="updateSubjectCourse">
                     <option disabled selected>SELECCIONA EL NOU CURS</option>
                     <?php
                     for ($i = 0; $i < count($cursos); $i++) {
@@ -106,7 +107,7 @@
         </article>
         <article>
             <h4>Esborrar curs</h4>
-            <form action="\adminsubjects\deleteSubject" method="post">
+            <form action="<?= root(); ?>adminsubjects/deleteSubject" method="post">
                 <br>
                 <select name="deleteSubjectId">
                     <option disabled selected>SELECCIONA ASSIGNATURA</option>
@@ -122,7 +123,7 @@
             </form>
         </article>
         <article>
-            <a href="\dashboard">Torna al Dashboard</a>
+            <a href="<?= root(); ?>dashboard">Torna al Dashboard</a>
         </article>
     </section>
 </body>

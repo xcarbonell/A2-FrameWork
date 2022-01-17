@@ -36,7 +36,7 @@ class ListsController extends Controller
 
         //si l'usuari no ha posat el nom de la llista el retornem a la pagina anterior
         if ($name == "") {
-            $this->redirectTo('/lists');
+            $this->redirectTo('lists');
             die;
         }
 
@@ -51,7 +51,7 @@ class ListsController extends Controller
             $stmt->execute([":listName" => $name, ":userId" => $user, ":userRole" => $tipusUser]);
 
             //retornem a l'usuari a la pagina anterior
-            $this->redirectTo('/lists');
+            $this->redirectTo('lists');
         } catch (\PDOException $e) {
             die($e->getMessage());
         }
@@ -65,7 +65,7 @@ class ListsController extends Controller
 
         //si l'usuari no ha posat el nom nou de la llista el retornem a la pagina anterior
         if ($name == "") {
-            $this->redirectTo('/lists');
+            $this->redirectTo('lists');
             die;
         }
 
@@ -77,7 +77,7 @@ class ListsController extends Controller
             $stmt->execute([":listName" => $name, ":id" => $idList]);
 
             //retornem a l'usuari a la pagina anterior
-            $this->redirectTo('/lists');
+            $this->redirectTo('lists');
         } catch (\PDOException $e) {
             die($e->getMessage());
         }
@@ -104,7 +104,7 @@ class ListsController extends Controller
             $stmt->execute([":id" => $idList]);
 
             //retornem a l'usuari a la pagina anterior
-            $this->redirectTo('/lists');
+            $this->redirectTo('lists');
         } catch (\PDOException $e) {
             die($e->getMessage());
         }

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School</title>
-    <link type="text/css" rel="stylesheet" href="public/css/estil.css" />
+    <link type="text/css" rel="stylesheet" href="<?php root(); ?>public/css/estil.css" />
 </head>
 
 <body>
@@ -15,7 +15,7 @@
             <h1><?= $nom; ?></h1>
         </div>
         <div id="menuSup">
-            <form action="\logout" method="post">
+            <form action="<?= root(); ?>logout" method="post">
                 <button type="submit">TANCAR SESSIO</button>
             </form>
         </div>
@@ -42,7 +42,7 @@
         </article>
         <article>
             <h4>Crear llista de tasques</h4>
-            <form action="\lists\createList" method="post">
+            <form action="<?= root(); ?>lists/createList" method="post">
                 <label for="createListName">Introdueix el nom de la llista:</label>
                 <input type="text" name="createListName" placeholder="Nom">
                 <br>
@@ -52,7 +52,7 @@
         </article>
         <article>
             <h4>Modificar llista</h4>
-            <form action="\lists\updateList" method="post">
+            <form action="<?= root(); ?>lists/updateList" method="post">
                 <label for="updateList">Selecciona una llista:</label>
                 <br>
                 <select name="updateList">
@@ -72,7 +72,7 @@
         </article>
         <article>
             <h4>Esborrar llista</h4>
-            <form action="\lists\deleteList" method="post">
+            <form action="<?= root(); ?>lists/deleteList" method="post">
                 <label for="deleteList">Selecciona una llista:</label>
                 <br>
                 <select name="deleteList">
@@ -88,7 +88,7 @@
             </form>
         </article>
         <article>
-            <a href="\dashboard">Torna al Dashboard</a>
+            <a href="<?= root(); ?>dashboard">Torna al Dashboard</a>
         </article>
     </section>
 </body>

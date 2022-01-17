@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School</title>
-    <link type="text/css" rel="stylesheet" href="public/css/estil.css" />
+    <link type="text/css" rel="stylesheet" href="<?php root(); ?>public/css/estil.css" />
 </head>
 
 <body>
@@ -15,7 +15,7 @@
             <h1><?= $nom; ?></h1>
         </div>
         <div id="menuSup">
-            <form action="\logout" method="post">
+            <form action="<?= root(); ?>logout" method="post">
                 <button type="submit">TANCAR SESSIO</button>
             </form>
         </div>
@@ -59,7 +59,7 @@
         </article>
         <article>
             <h4>Registrar nou usuari</h4>
-            <form action="\register\reg" method="post">
+            <form action="<?= root(); ?>register/reg" method="post">
                 <input type="email" name="regEmail" placeholder="Email">
                 <input type="password" name="regPasswd" placeholder="Password">
                 <input type="password" name="regPasswdCheck" placeholder="Confirma la contrasenya">
@@ -75,7 +75,7 @@
         </article>
         <article>
             <h4>Modificar dades d'un usuari existent</h4>
-            <form action="\perfil\updatePerfil" method="post">
+            <form action="<?= root(); ?>perfil/updatePerfil" method="post">
                 <br>
                 <select name="userUpdate">
                     <option disabled selected>SELECCIONA USUARI</option>
@@ -114,7 +114,7 @@
         </article>
         <article>
             <h4>Esborrar usuari</h4>
-            <form action="\adminusers\deleteUser" method="post">
+            <form action="<?= root(); ?>adminusers/deleteUser" method="post">
                 <br>
                 <select name="deleteUser">
                     <option disabled selected>SELECCIONA USUARI</option>
@@ -135,7 +135,7 @@
             </form>
         </article>
         <article>
-            <a href="\dashboard">Torna al Dashboard</a>
+            <a href="<?= root(); ?>dashboard">Torna al Dashboard</a>
         </article>
     </section>
 </body>

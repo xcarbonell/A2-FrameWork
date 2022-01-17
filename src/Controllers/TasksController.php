@@ -33,7 +33,7 @@ class TasksController extends Controller
 
         //si l'usuari no ha posat el nom de la tasca el retornem a la pagina anterior
         if ($name == "") {
-            $this->redirectTo('/tasks');
+            $this->redirectTo('tasks');
             die;
         }
 
@@ -55,7 +55,7 @@ class TasksController extends Controller
             $stmt->execute([":item" => $name, ":listId" => $llista, ":completed" => $bAcabada, ":create_time" => $hoy, ":update_time" => $hoy]);
 
             //retornem a l'usuari a la pagina anterior
-            $this->redirectTo('/tasks');
+            $this->redirectTo('tasks');
         } catch (\PDOException $e) {
             die($e->getMessage());
         }
@@ -69,7 +69,7 @@ class TasksController extends Controller
 
         //si l'usuari no ha posat el nou estat de la tasca el retornem a la pagina anterior
         if ($nouEstat == null) {
-            $this->redirectTo('/tasks');
+            $this->redirectTo('tasks');
             die;
         }
 
@@ -91,7 +91,7 @@ class TasksController extends Controller
             $stmt->execute([":completed" => $bAcabada, ":update_time" => $hoy, ":id" => $idTasca]);
 
             //retornem a l'usuari a la pagina anterior
-            $this->redirectTo('/tasks');
+            $this->redirectTo('tasks');
         } catch (\PDOException $e) {
             die($e->getMessage());
         }
@@ -111,7 +111,7 @@ class TasksController extends Controller
             $stmt->execute([":id" => $idTask]);
 
             //retornem a l'usuari a la pagina anterior
-            $this->redirectTo('/lists');
+            $this->redirectTo('tasks');
         } catch (\PDOException $e) {
             die($e->getMessage());
         }

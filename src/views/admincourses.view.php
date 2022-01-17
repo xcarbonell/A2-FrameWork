@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School</title>
-    <link type="text/css" rel="stylesheet" href="public/css/estil.css" />
+    <link type="text/css" rel="stylesheet" href="<?php root(); ?>public/css/estil.css" />
 </head>
 
 <body>
@@ -15,7 +15,7 @@
             <h1><?= $nom; ?></h1>
         </div>
         <div id="menuSup">
-            <form action="\logout" method="post">
+            <form action="<?= root(); ?>logout" method="post">
                 <button type="submit">TANCAR SESSIO</button>
             </form>
         </div>
@@ -42,7 +42,7 @@
         <article>
             <h4>Afegir nou curs</h4>
             <br>
-            <form action="\admincourses\addCourse" method="post">
+            <form action="<?= root(); ?>admincourses/addCourse" method="post">
                 <input type="text" name="addCourseName" placeholder="Nom">
                 <input type="text" name="addCourseAcronym" placeholder="Sigles">
                 <br>
@@ -53,7 +53,7 @@
         <article>
             <h4>Modificar dades d'un curs existent</h4>
             <br>
-            <form action="\admincourses\updateCourse" method="post">
+            <form action="<?= root(); ?>admincourses/updateCourse" method="post">
                 <select name="updateCourseId">
                     <option disabled selected>SELECCIONA CURS</option>
                     <?php
@@ -76,7 +76,7 @@
         </article>
         <article>
             <h4>Esborrar curs</h4>
-            <form action="\admincourses\deleteCourse" method="post">
+            <form action="<?= root(); ?>admincourses/deleteCourse" method="post">
                 <br>
                 <select name="deleteCourseId">
                     <option disabled selected>SELECCIONA CURS</option>
@@ -92,7 +92,7 @@
             </form>
         </article>
         <article>
-            <a href="\dashboard">Torna al Dashboard</a>
+            <a href="<?= root(); ?>dashboard">Torna al Dashboard</a>
         </article>
     </section>
 </body>

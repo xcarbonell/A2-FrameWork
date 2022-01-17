@@ -23,13 +23,17 @@ final class App
         $controller = self::$req->getController();
 
         self::$action = self::$req->getAction();
-
         self::dispatch($controller, $routes, $session);
     }
 
     private static function dispatch($controller, $routes, $session): void
     {
-
+        /*var_dump($controller);
+        echo '<br><br>';
+        var_dump($routes);
+        echo '<br><br>';
+        var_dump($session);
+        echo '<br><br>';*/
         try {
             if (in_array($controller, $routes)) {
                 // si es ruta de sistema es pot instanciar
@@ -64,6 +68,15 @@ final class App
                 $routes[] = strtolower(substr($entry, 0, -14));
             }
         }
+        /*var_dump($dir);
+        echo '<br><br>';
+        var_dump($entry);
+        echo '<br><br>';
+        var_dump($handle);
+        echo '<br><br>';
+        var_dump($routes);
+        echo '<br><br>';*/
+
         return $routes;
     }
 }

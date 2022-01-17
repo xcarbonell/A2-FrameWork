@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School</title>
-    <link type="text/css" rel="stylesheet" href="public/css/estil.css"/>
+    <link type="text/css" rel="stylesheet" href="<?php root(); ?>public/css/estil.css"/>
 </head>
 
 <body>
@@ -16,10 +16,10 @@
     <nav>
         <ul>
             <li>
-                <a href="\register">REGISTER</a>
+                <a href="<?= root(); ?>register">REGISTER</a>
             </li>
             <li>
-                <a href="\index">HOME</a>
+                <a href="<?= root(); ?>index">HOME</a>
             </li>
         </ul>
     </nav>
@@ -29,7 +29,7 @@
                 <p>La teva última connexió va ser: <?= $data ?></p><br>
             <?php endif ?>
 
-            <form action="\login\log" method="post">
+            <form action="<?= root(); ?>login/log" method="post">
                 <?php if (!isset($_COOKIE['recorda'])) : ?>
                     <input type="email" name="email" placeholder="Email">
                     <input type="password" name="passwd" placeholder="Password">
@@ -48,7 +48,7 @@
                 <button type="submit">Login</button>
             </form>
             <br>
-            <form action="\reset" method="post">
+            <form action="<?= root(); ?>reset" method="post">
                 <button type="submit">Elimina les dades d'inici de sessio</button>
             </form>
         </article>

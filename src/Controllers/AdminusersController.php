@@ -60,7 +60,7 @@ class AdminUsersController extends Controller
         try {
             //si l'admin no ha seleccionat cap usuari a esborrar no fem res i recarreguem la pagina
             if($userData == ""){
-                $this->redirectTo('/adminusers');
+                $this->redirectTo('adminusers');
                 die;
             }
 
@@ -97,7 +97,7 @@ class AdminUsersController extends Controller
             $stmt->execute([":id" => $idUser]);
 
             //retornem a l'usuari a la pagina anterior
-            $this->redirectTo('/adminusers');
+            $this->redirectTo('adminusers');
         } catch (\PDOException $e) {
             die($e->getMessage());
         }

@@ -35,7 +35,7 @@ class AdmincoursesController extends Controller
         try {
             //si l'admin no ha omplert algun dels camps recarreguem la pagina
             if ($name == "" or $acronym == "") {
-                $this->redirectTo('/admincourses');
+                $this->redirectTo('admincourses');
                 die;
             }
 
@@ -45,7 +45,7 @@ class AdmincoursesController extends Controller
             $stmt = $qb->query($sql);
             $stmt->execute([":acronym" => $acronym, ":name" => $name]);
 
-            $this->redirectTo('/admincourses');
+            $this->redirectTo('admincourses');
         } catch (\PDOException $e) {
             die($e->getMessage());
         }
@@ -60,7 +60,7 @@ class AdmincoursesController extends Controller
 
             //si l'admin no ha seleccionat el curs que vol modificar recarreguem la pagina
             if ($courseId == "") {
-                $this->redirectTo('/admincourses');
+                $this->redirectTo('admincourses');
                 die;
             }
 
@@ -82,7 +82,7 @@ class AdmincoursesController extends Controller
                 $stmt->execute([":acronym" => $newAcronym, ":courseId" => $courseId]);
             }
 
-            $this->redirectTo('/admincourses');
+            $this->redirectTo('admincourses');
         } catch (\PDOException $e) {
             die($e->getMessage());
         }
@@ -95,7 +95,7 @@ class AdmincoursesController extends Controller
 
             //si l'admin no ha seleccionat el curs que vol esborrar recarreguem la pagina
             if ($courseId == "") {
-                $this->redirectTo('/admincourses');
+                $this->redirectTo('admincourses');
                 die;
             }
 
@@ -113,7 +113,7 @@ class AdmincoursesController extends Controller
             $stmt = $qb->query($sql);
             $stmt->execute([":id" => $courseId]);
 
-            $this->redirectTo('/admincourses');
+            $this->redirectTo('admincourses');
         } catch (\PDOException $e) {
             die($e->getMessage());
         }

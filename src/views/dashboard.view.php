@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School</title>
-    <link type="text/css" rel="stylesheet" href="public/css/estil.css" />
+    <link type="text/css" rel="stylesheet" href="<?php root(); ?>public/css/estil.css" />
 </head>
 
 <body>
@@ -15,7 +15,7 @@
             <h1><?= $nom; ?></h1>
         </div>
         <div id="menuSup">
-            <form action="\logout" method="post">
+            <form action="<?= root(); ?>logout" method="post">
                 <button type="submit">TANCAR SESSIO</button>
             </form>
         </div>
@@ -51,10 +51,10 @@
                 <p>No tens tasques per realitzar</p>
             <?php endif ?>
             <br>
-            <a href="\tasks">Gestiona les tasques</a>
+            <a href="<?= root(); ?>tasks">Gestiona les tasques</a>
             <br>
             <br>
-            <a href="\lists">Gestiona les llistes</a>
+            <a href="<?= root(); ?>lists">Gestiona les llistes</a>
         </article>
         <article id="perfil">
             <h4>Gestió del perfil</h4>
@@ -62,24 +62,24 @@
             <p>Nom: <?= $_COOKIE['activeUser'] ?></p>
             <p>Email: <?= $_COOKIE['emailUser'] ?></p>
             <br>
-            <a href="\perfil">Modifica el perfil</a>
+            <a href="<?= root(); ?>perfil">Modifica el perfil</a>
             <?php if ($userRole == 1) : ?>
                 <br>
                 <br>
-                <a href="\curs">Visualitza cursos, materies i alumnat</a>
+                <a href="<?= root(); ?>curs">Visualitza cursos, materies i alumnat</a>
             <?php endif ?>
         </article>
         <?php if ($userRole == 2) : ?>
             <article>
                 <h4>Administració</h4>
                 <br>
-                <a href="\adminusers">Administrar usuaris</a>
+                <a href="<?= root(); ?>adminusers">Administrar usuaris</a>
                 <br>
                 <br>
-                <a href="\admincourses">Administrar cursos</a>
+                <a href="<?= root(); ?>admincourses">Administrar cursos</a>
                 <br>
                 <br>
-                <a href="\adminsubjects">Administrar assignatures</a>
+                <a href="<?= root(); ?>adminsubjects">Administrar assignatures</a>
             </article>
         <?php endif ?>
     </section>

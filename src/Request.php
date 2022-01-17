@@ -14,7 +14,8 @@ class Request
     {
         $requestString = \htmlentities($_SERVER['REQUEST_URI']);
         //adaptar el sistema root a domini o carpeta
-        $reqStr = $this->get_diff($requestString, ROOT);
+        $reqStr = $this->get_diff($requestString, $_ENV['ROOT']);
+        //dd($reqStr, $requestString, $_ENV['ROOT']);
         //extract URI
         $this->arrURI = explode('/', $reqStr);
 

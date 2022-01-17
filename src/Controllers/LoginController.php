@@ -34,7 +34,7 @@ class LoginController extends Controller
 
             //si l'usuari no ha omplert algun dels camps necessaris el retornem al login
             if ($email == "" or $password == "" or $tipusUser == "") {
-                $this->redirectTo('/login');
+                $this->redirectTo('login');
             }
 
             //connexio a bbdd i execucio stmt
@@ -51,7 +51,7 @@ class LoginController extends Controller
             si !$pwdOK == true vol dir que la contrasenya es incorrecta
             en qualsevol dels casos tornem a l'usuari al login*/
             if ($rows == null or !$pwdOK) {
-                $this->redirectTo('/login');
+                $this->redirectTo('login');
             }
 
             if ($pwdOK) {
@@ -77,10 +77,10 @@ class LoginController extends Controller
                 //ara comprovarem si l'usuari es un alumne i esta matriculat a un curs
                 if ($tipusUser == "students" && $rows[0]["courseId"] == null) {
                     //si no ho esta l'enviarem a la vista per matricularse
-                    $this->redirectTo('/matricula');
+                    $this->redirectTo('matricula');
                 } else {
                     //si ho esta l'enviem directament al dashboard
-                    $this->redirectTo('/dashboard');
+                    $this->redirectTo('dashboard');
                 }
             }
         } catch (\PDOException $e) {

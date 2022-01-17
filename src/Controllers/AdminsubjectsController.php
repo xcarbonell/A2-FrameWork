@@ -53,7 +53,7 @@ class AdminsubjectsController extends Controller
 
             //si l'admin no omple tots els camps recarreguem la pagina
             if ($name == "" or $teacher == "" or $course == "") {
-                $this->redirectTo('/adminsubjects');
+                $this->redirectTo('adminsubjects');
                 die;
             }
 
@@ -63,7 +63,7 @@ class AdminsubjectsController extends Controller
             $stmt = $qb->query($sql);
             $stmt->execute([":name" => $name, ":teacherId" => $teacher, ":courseId" => $course]);
 
-            $this->redirectTo('/adminsubjects');
+            $this->redirectTo('adminsubjects');
         } catch (\PDOException $e) {
             die($e->getMessage());
         }
@@ -79,7 +79,7 @@ class AdminsubjectsController extends Controller
 
         //si l'admin no ha seleccionat cap assignatura per modificar recarreguem la pagina
         if ($subjectId == "") {
-            $this->redirectTo('/adminsubjects');
+            $this->redirectTo('adminsubjects');
             die;
         }
 
@@ -111,7 +111,7 @@ class AdminsubjectsController extends Controller
                 $stmt->execute([":name" => $newName, ":subjectId" => $subjectId]);
             }
 
-            $this->redirectTo('/adminsubjects');
+            $this->redirectTo('adminsubjects');
         } catch (\PDOException $e) {
             die($e->getMessage());
         }
@@ -123,7 +123,7 @@ class AdminsubjectsController extends Controller
 
             //si l'admin no ha seleccionat l'assignatura que vol esborrar recarreguem la pagina
             if ($subjectId == "") {
-                $this->redirectTo('/adminsubjects');
+                $this->redirectTo('adminsubjects');
                 die;
             }
 
@@ -133,7 +133,7 @@ class AdminsubjectsController extends Controller
             $stmt = $qb->query($sql);
             $stmt->execute([":id" => $subjectId]);
 
-            $this->redirectTo('/adminsubjects');
+            $this->redirectTo('adminsubjects');
         } catch (\PDOException $e) {
             die($e->getMessage());
         }

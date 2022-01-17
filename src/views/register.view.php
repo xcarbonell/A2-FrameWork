@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School</title>
-    <link type="text/css" rel="stylesheet" href="public/css/estil.css">
+    <link type="text/css" rel="stylesheet" href="<?php root(); ?>public/css/estil.css">
 </head>
 
 <body>
@@ -16,16 +16,16 @@
     <nav>
         <ul>
             <li>
-                <a href="\login">LOGIN</a>
+                <a href="<?= root(); ?>login">LOGIN</a>
             </li>
             <li>
-                <a href="\index">HOME</a>
+                <a href="<?= root(); ?>index">HOME</a>
             </li>
         </ul>
     </nav>
     <section>
         <article>
-            <form action="\register\reg" method="post">
+            <form action="<?= root(); ?>register/reg" method="post">
                 <input type="email" name="regEmail" placeholder="Email">
                 <input type="password" name="regPasswd" placeholder="Password">
                 <input type="password" name="regPasswdCheck" placeholder="Confirma la contrasenya">

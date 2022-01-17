@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School</title>
-    <link type="text/css" rel="stylesheet" href="public/css/estil.css">
+    <link type="text/css" rel="stylesheet" href="<?php root(); ?>public/css/estil.css">
 </head>
 
 <body>
     <header>
         <h1><?= $nom; ?></h1>
         <div id="menuSup">
-            <form action="\logout" method="post">
+            <form action="<?= root(); ?>logout" method="post">
                 <button type="submit">TANCAR SESSIO</button>
             </form>
         </div>
@@ -23,7 +23,7 @@
     </nav>
     <section>
         <article>
-            <form action="\matricula\inscripcio" method="post">
+            <form action="<?= root(); ?>matricula/inscripcio" method="post">
                 <label for="cursos">Selecciona uns estudis:</label>
                 <br>
                 <select name="llistaCursos" id="cursos">

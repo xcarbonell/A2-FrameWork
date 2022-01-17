@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School</title>
-    <link type="text/css" rel="stylesheet" href="public/css/estil.css">
+    <link type="text/css" rel="stylesheet" href="<?php root(); ?>public/css/estil.css">
 </head>
 
 <body>
@@ -18,7 +18,7 @@
     </nav>
     <section>
         <article>
-            <form action="\perfil\updatePerfil" method="post">
+            <form action="<?= root(); ?>perfil/updatePerfil" method="post">
                 <label for="nomUpdate">Introdueix el teu nou nom:</label>
                 <input type="text" name="nomUpdate" placeholder="Nom">
                 <br>
@@ -34,7 +34,7 @@
                 <button type="submit">Guarda els canvis</button>
             </form>
             <br>
-            <a href="\dashboard">Torna al Dashboard</a>
+            <a href="<?= root(); ?>dashboard">Torna al Dashboard</a>
         </article>
     </section>
 </body>

@@ -34,11 +34,11 @@ class RegisterController extends Controller
 
             //si l'usuari no ha omplert algun dels camps necessaris el retornem al login
             if ($email == "" or $password == "" or $passwordCheck == "" or $nom == "" or $tipusUser == "") {
-                $this->redirectTo('/register');
+                $this->redirectTo('register');
             }
             //si les contrasenyes no coincideixen, el registre haura estat incorrecte
             if ($password != $passwordCheck) {
-                $this->redirectTo('/register');
+                $this->redirectTo('register');
             }
             //si passa les condicions anteriors, procedim a afegir el nou usuari a la taula corresponent
             //connexio a bbdd i execucio stmt
@@ -60,10 +60,10 @@ class RegisterController extends Controller
 
         //si el que ha fet el registre es un admin, el retornem a la pagina d'administracio
         if ($_SESSION["rolUser"] == "admins") {
-            $this->redirectTo('/adminusers');
+            $this->redirectTo('adminusers');
             die;
         }
 
-        $this->redirectTo('/login');
+        $this->redirectTo('login');
     }
 }

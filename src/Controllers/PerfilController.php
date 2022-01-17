@@ -84,11 +84,11 @@ class PerfilController extends Controller
 
             //si el que ha fet el registre es un admin, el retornem a la pagina d'administracio
             if ($_SESSION["rolUser"] == "admins") {
-                $this->redirectTo('/adminusers');
+                $this->redirectTo('adminusers');
                 die;
             }
 
-            $this->redirectTo('/perfil');
+            $this->redirectTo('perfil');
         } catch (\PDOException $e) {
             die($e->getMessage());
         }

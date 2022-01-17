@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School</title>
-    <link type="text/css" rel="stylesheet" href="public/css/estil.css" />
+    <link type="text/css" rel="stylesheet" href="<?php root(); ?>public/css/estil.css" />
 </head>
 
 <body>
@@ -15,7 +15,7 @@
             <h1><?= $nom; ?></h1>
         </div>
         <div id="menuSup">
-            <form action="\logout" method="post">
+            <form action="<?= root(); ?>logout" method="post">
                 <button type="submit">TANCAR SESSIO</button>
             </form>
         </div>
@@ -50,7 +50,7 @@
         </article>
        <article>
             <h4>Crear tasca</h4>
-            <form action="\tasks\createTask" method="post">
+            <form action="<?= root(); ?>tasks/createTask" method="post">
                 <label for="item">Introdueix el nom:</label>
                 <input type="text" name="item" placeholder="Nom">
                 <br>
@@ -73,7 +73,7 @@
         </article>
         <article>
             <h4>Modificar tasca</h4>
-            <form action="\tasks\updateTask" method="post">
+            <form action="<?= root(); ?>tasks/updateTask" method="post">
                 <label for="updateTaskList">Selecciona una tasca:</label>
                 <br>
                 <select name="updateTaskList">
@@ -104,7 +104,7 @@
         </article>
         <article>
             <h4>Esborrar tasca</h4>
-            <form action="\tasks\deleteTask" method="post">
+            <form action="<?= root(); ?>tasks/deleteTask" method="post">
                 <label for="deleteTaskList">Selecciona una tasca:</label>
                 <br>
                 <select name="deleteTaskList">
@@ -127,7 +127,7 @@
             </form>
         </article>
         <article>
-            <a href="\dashboard">Torna al Dashboard</a>
+            <a href="<?= root(); ?>dashboard">Torna al Dashboard</a>
         </article>
     </section>
 </body>

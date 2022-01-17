@@ -42,7 +42,7 @@ class MatriculaController extends Controller
             $stmt = $qb->query($sql);
             $stmt->execute([":idCurs" => $idCurs, ":idUser" => $idUser]);
             //enviem a l'usuari al dashboard
-            $this->redirectTo('/dashboard');
+            $this->redirectTo('dashboard');
         } catch (\PDOException $e) {
             die($e->getMessage());
         }
