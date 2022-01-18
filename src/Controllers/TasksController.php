@@ -74,13 +74,6 @@ class TasksController extends Controller
         }
 
         try {
-            //passem el valor del checkbox a 1 o 0 segons si esta acabada o no
-            //faig aquest canvi de variable ja que el "value" que ve del formulari es un string, i al intentar-lo posar a la BBDD crea conflicte ja que el camp es de tipus bool
-            if ($nouEstat == 0) {
-                $bAcabada = false;
-            } else {
-                $bAcabada = true;
-            }
             //obtenim la data d'avui per acabar d'omplir els camps
             $hoy = date("Y-m-d H:i:s");
 
@@ -88,7 +81,7 @@ class TasksController extends Controller
             $qb = Registry::get('database');
             $sql = "UPDATE taskItems SET completed=:completed, update_time=:update_time WHERE id=:id";
             $stmt = $qb->query($sql);
-            $stmt->execute([":completed" => $bAcabada, ":update_time" => $hoy, ":id" => $idTasca]);
+            $stmt->execute([":completed" => $nouEstat, ":update_time" => $hoy, ":id" => $idTasca]);
 
             //retornem a l'usuari a la pagina anterior
             $this->redirectTo('tasks');
